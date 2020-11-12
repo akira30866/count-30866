@@ -1,24 +1,37 @@
-# README
+## userテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Columns  | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-Things you may want to cover:
 
-* Ruby version
+### Association
+- has_many :counts
 
-* System dependencies
+## countテーブル
 
-* Configuration
+| Columns     | Type      | Options           |
+| ------------| --------- | ----------------- |
+| name        | string    | null: false       |
+| title       | string    |                   |
+| count       | integer   |                   |
+| probability | integer   |                   |
+| trials      | integer   |                   |
+| remark      | string    |                   |
+| category_id | integer   | null: false       |
+| release_id  | integer   |                   |
+| user        | reference | foreign_key: true |
 
-* Database creation
+### Association
+- belongs_to :user
+- belongs_to_active_hash :category
+- belongs_to_active_hash :release
 
-* Database initialization
+## ActiveStorage
+- image
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## ActiveHash
+- category
+- release
