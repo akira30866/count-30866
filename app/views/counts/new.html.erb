@@ -55,21 +55,21 @@
         <div class="detail-bold-text">
           タイトル
         </div>
-        <%= detail.text_field :title, class:"detail-title", id:"title" %>
+        <%= detail.text_field :title, class:"detail-title" %>
       </div>
 
       <div class="detail-form">
         <div class="detail-bold-text">
           回数
         </div>
-        <%= detail.text_field :number, class:"detail-number", id:"number"%>
+        <%= detail.text_field :number, class:"detail-number" %>
       </div>
 
       <div class="detail-form">
         <div class="detail-bold-text">
           確率
         </div>
-        <%= detail.text_field :probability, class:"detail-probability", id:"probability"%>
+        <%= detail.text_field :probability, class:"detail-probability" %>
       </div>
     <% end %>
     <%= f.link_to_add "追加", :details %>
