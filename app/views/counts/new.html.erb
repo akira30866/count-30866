@@ -1,12 +1,12 @@
 <div class="counts-main">
   <h2 class="counts-title">集計情報の入力</h2>
-  <%= form_with(model:@model, local:true) do |f| %>
+  <%= nested_form_for(@count) do |f| %>
   
   <%# カウントのサムネ（任意） %>
   <div class="image-upload">
     <div class="weight-bold-text">
       サムネイル
-      <span class="any">任意</span>
+      <span class="indispenable">必須</span>
     </div>
   </div>
   <div class="click-upload">
