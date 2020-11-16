@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_064820) do
+ActiveRecord::Schema.define(version: 2020_11_16_065511) do
 
   create_table "counts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2020_11_16_064820) do
     t.integer "trials"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_counts_on_user_id"
+  end
+
+  create_table "details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.integer "number"
+    t.integer "probability"
+    t.bigint "count_id"
+    t.index ["count_id"], name: "index_details_on_count_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,4 +48,5 @@ ActiveRecord::Schema.define(version: 2020_11_16_064820) do
   end
 
   add_foreign_key "counts", "users"
+  add_foreign_key "details", "counts"
 end
