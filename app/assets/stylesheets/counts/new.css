@@ -12,7 +12,7 @@
 }
 
 /* 共通 */
-.indispensable, .any {
+.indispenable, .any {
   background: #ea352d;
   margin-left: 8px;
   padding: 3px;
@@ -80,8 +80,37 @@
   margin: 2vh 0;
 }
 
-/**/
+/* 動的フォーム */
+.detail_form{
+  margin-bottom: 2vh;
+}
 
+.fields{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+}
+
+.detail-bold-text{
+  font-weight: bold;
+  min-width: 100px;
+  margin-bottom: 5px;
+}
+
+.detail-title{
+  height: 30px;
+  width: 120px;
+}
+
+.detail-number, .detail-probability{
+  height: 30px;
+  width: 50px;
+}
+
+.add_nested_fields{
+  border: 1px solid black;
+  padding: 4px;
+}
 
 /*送信ボタン*/
 .count-btn-contents {

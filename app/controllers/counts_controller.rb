@@ -4,6 +4,7 @@ class CountsController < ApplicationController
 
   def new
     @count = Count.new
+    @count.details.build
   end
 
   def create
