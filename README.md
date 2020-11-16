@@ -28,12 +28,12 @@
 - belongs_to_active_hash :release
 
 ## detailテーブル
-| Columns      | Type      | Options           |
-| ------------ | --------- | ----------------- |
-| title        | string    |                   |
-| count        | integer   |                   |
-| probability  | integer   |                   |
-| count        | reference | foreign_key: true |
+| Columns       | Type      | Options           |
+| ------------  | --------- | ----------------- |
+| title         | string    |                   |
+| number        | integer   |                   |
+| probability   | integer   |                   |
+| count         | reference | foreign_key: true |
 
 ### Association
 - belongs_to :count
