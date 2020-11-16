@@ -1,0 +1,61 @@
+<div class="counts-main">
+  <h2 class="counts-title">集計情報の入力</h2>
+  <%= form_with(model:@model, local:true) do |f| %>
+  
+  <%# カウントのサムネ（任意） %>
+  <div class="image-upload">
+    <div class="weight-bold-text">
+      サムネイル
+      <span class="any">任意</span>
+    </div>
+  </div>
+  <div class="click-upload">
+    <p>
+      クリックしてファイルをアップロード
+    </p>
+    <%= f.file_field :image, id:"count-image" %>
+  </div>
+
+  <%# 集計の名前と概要 %>
+  <div class="new-counts">
+    <div class="weight-bold-text">
+      集計名
+      <span class="indispenable">必須</span>
+    </div>
+    <%= f.text_area :name, class:"counts-text", id:"count-name", palceholder:"集計名を記入" %>
+    <div class="counts-explain">
+      <div class="weight-bold-text">
+        集計の概要
+        <span class="any">任意</span>
+      </div>
+      <%= f.text_area :remark, class:"counts-text", id:"count-info", placeholder:"集計の概要を記入してください"%>
+    </div>
+    <%# カテゴリーの設定 %>
+    <div class="count-detail">
+      <div class="weight-bold-text">
+        公開・非公開
+        <span class="indispenable">必須</span>
+      </div>
+      <%= f.collection_select(:category_id,  [], :id, :name, {}, {class:"select-box", id:"count-category"})%>
+    </div>
+    <%# 公開・非公開の設定 %>
+    <div class="count-detail">
+      <div class="weight-bold-text">
+        公開・非公開
+        <span class="indispenable">必須</span>
+      </div>
+      <%= f.collection_select(:release_id, [], :id, :name, {}, {class:"select-box", id:"count-release"})%>
+    </div>
+  </div>
+
+  <%# 動的フォームの作成 %>
+
+
+  <%# 送信ボタン %>
+  <div class="count-btn-contents">
+    <%= f.submit "投稿" ,class:"count-btn" %>
+    <%= link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+  <% end %>
+</div>
+

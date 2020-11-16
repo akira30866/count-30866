@@ -1,0 +1,111 @@
+.counts-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.counts-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 共通 */
+.indispensable, .any {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.select-box {
+  height: 30px;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-left: 20px;
+}
+
+/* 集計画像 */
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}
+
+/* 集計名と概要 */
+.new-counts {
+  padding: 2vh 0;
+}
+
+.counts-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.counts-explain {
+  margin-top: 2vh;
+}
+
+/* 公開・非公開設定とカテゴリー */
+.counts-detail {
+  width: 300px;
+  margin-top: 2vh;
+}
+
+.select-box {
+  margin: 2vh 0;
+}
+
+/**/
+
+
+/*送信ボタン*/
+.count-btn-contents {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 30%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.back-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  width: 30%;
+  height: 50px;
+  font-size: 14px;
+  text-align: center;
+}
