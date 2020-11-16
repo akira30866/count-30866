@@ -22,13 +22,13 @@
       集計名
       <span class="indispenable">必須</span>
     </div>
-    <%= f.text_area :name, class:"counts-text", id:"count-name", palceholder:"集計名を記入" %>
+    <%= f.text_area :name, class:"counts-text", id:"count-name" %>
     <div class="counts-explain">
       <div class="weight-bold-text">
         集計の概要
         <span class="any">任意</span>
       </div>
-      <%= f.text_area :remark, class:"counts-text", id:"count-info", placeholder:"集計の概要を記入してください"%>
+      <%= f.text_area :remark, class:"counts-text", id:"count-info" %>
     </div>
     <%# カテゴリーの設定 %>
     <div class="count-detail">
@@ -36,7 +36,7 @@
         公開・非公開
         <span class="indispenable">必須</span>
       </div>
-      <%= f.collection_select(:category_id,  [], :id, :name, {}, {class:"select-box", id:"count-category"})%>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"count-category"})%>
     </div>
     <%# 公開・非公開の設定 %>
     <div class="count-detail">
@@ -44,7 +44,7 @@
         公開・非公開
         <span class="indispenable">必須</span>
       </div>
-      <%= f.collection_select(:release_id, [], :id, :name, {}, {class:"select-box", id:"count-release"})%>
+      <%= f.collection_select(:release_id, Release.all, :id, :name, {}, {class:"select-box", id:"count-release"})%>
     </div>
   </div>
 
