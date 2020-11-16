@@ -1,6 +1,10 @@
 class Count < ApplicationRecord
   # validation
-  validates :name, presence :true 
+  with_options presence: true do
+    validates :name
+    validates :category
+    validates :release
+  end    
   with_options numericality: { other_than: 1 } do
     validate :category_id
     validate :release_id
@@ -8,4 +12,7 @@ class Count < ApplicationRecord
   # Association
   has_many :details
   belongs_to :user 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+  belongs_to_active_hash :release
 end
