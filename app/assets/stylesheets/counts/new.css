@@ -88,6 +88,7 @@
 .fields{
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 2vh;
 }
 
@@ -112,6 +113,41 @@
   padding: 4px;
 }
 
+.remove_nested_fields{
+  height: 30px;
+  width: 50px;
+  border: 1px solid black;
+  padding: 4px;
+  text-align: center;
+}
+
+/*試行回数*/
+.trial-form{
+  margin-bottom: 2vh;
+}
+
+.trial-bold-text{
+  font-weight: bold;
+  min-width: 70px;
+  margin-bottom: 5px;
+}
+
+.trial-input{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.trial-number{
+  height: 30px;
+  width: 50px;
+}
+
+.count-btn{
+  height: 30px;
+  margin-left: 20px;
+}
+
+
 /*送信ボタン*/
 .count-btn-contents {
   width: 100%;
@@ -119,7 +155,7 @@
   justify-content: space-between;
 }
 
-.count-btn {
+.submit-btn {
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;

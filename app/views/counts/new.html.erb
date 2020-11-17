@@ -63,6 +63,8 @@
           回数
         </div>
         <%= detail.text_field :number, class:"detail-number" %>
+        <%= button_tag "up",type:'button',class:"count-up-btn" %>
+        <%= button_tag "down",type:'button',class:"count-down-btn" %>
       </div>
 
       <div class="detail-form">
@@ -70,14 +72,28 @@
           確率
         </div>
         <%= detail.text_field :probability, class:"detail-probability" %>
+        <%= button_tag "calc.",type:'button',class:"count-calc-btn" %>
       </div>
+      <%= f.link_to_remove "削除" %>
     <% end %>
     <%= f.link_to_add "追加", :details %>
   </div>
 
+  <%# 試行回数 %>
+  <div class="trial-form">
+    <div class="trial-bold-text">
+        試行回数
+    </div>
+    <div class = "trial-input">
+      <%= f.text_field :trials, class:"trial-number", id:"trials" %>
+      <%= button_tag "up",type:'button',class:"count-btn",id:"trial-up-btn" %>
+      <%= button_tag "down",type:'button',class:"count-btn",id:"trial-down-btn" %>
+    </div>
+  </div>
+
   <%# 送信ボタン %>
   <div class="count-btn-contents">
-    <%= f.submit "投稿" ,class:"count-btn" %>
+    <%= f.submit "投稿" ,class:"submit-btn" %>
     <%= link_to 'もどる', root_path, class:"back-btn" %>
   </div>
   <% end %>
