@@ -18,7 +18,7 @@
 | trials      | integer   |                   |
 | remark      | string    |                   |
 | category_id | integer   | null: false       |
-| release_id  | integer   |                   |
+| release_id  | integer   | null: false       |
 | user        | reference | foreign_key: true |
 
 ### Association
