@@ -30,6 +30,6 @@ class CountsController < ApplicationController
 
   def find_count
     @count = Count.find(params[:id])
-    @details = @count.details.build
+    @details = @count.details.includes(:count)
   end
 end
