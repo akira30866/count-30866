@@ -1,5 +1,8 @@
 class CountsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  
   def index
+    @counts = Count.includes(:user).order("created_at")
   end
 
   def new
