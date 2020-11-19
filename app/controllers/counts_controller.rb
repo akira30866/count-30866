@@ -1,6 +1,6 @@
 class CountsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_count, only: [:show]
+  before_action :find_count, only: [:show, :edit]
   before_action :private_to_index, only: [:show]
   
   def index
@@ -22,6 +22,12 @@ class CountsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
