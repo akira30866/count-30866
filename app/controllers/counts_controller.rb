@@ -1,6 +1,7 @@
 class CountsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_count, only: [:show]
+  before_action :private_to_index, only: [:show]
   
   def index
     @counts = Count.includes(:user).order("created_at")
@@ -31,5 +32,11 @@ class CountsController < ApplicationController
   def find_count
     @count = Count.find(params[:id])
     @details = @count.details.includes(:count)
+  end
+
+  def private_to_index
+    if user_signed_in? && current_user.id != @count.user && @count.release_id == 3
+      redirect_to root_path
+    end
   end
 end
