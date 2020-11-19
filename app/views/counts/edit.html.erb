@@ -1,0 +1,101 @@
+<div class="counts-main">
+  <h2 class="counts-title">集計情報の入力</h2>
+  <%= nested_form_for(@count) do |f| %>
+  
+  <%# カウントのサムネ（任意） %>
+  <div class="image-upload">
+    <div class="weight-bold-text">
+      サムネイル
+      <span class="indispenable">必須</span>
+    </div>
+  </div>
+  <div class="click-upload">
+    <p>
+      クリックしてファイルをアップロード
+    </p>
+    <%= f.file_field :image, id:"count-image" %>
+  </div>
+
+  <%# 集計の名前と概要 %>
+  <div class="new-counts">
+    <div class="weight-bold-text">
+      集計名
+      <span class="indispenable">必須</span>
+    </div>
+    <%= f.text_area :name, class:"counts-text", id:"count-name" %>
+    <div class="counts-explain">
+      <div class="weight-bold-text">
+        集計の概要
+        <span class="any">任意</span>
+      </div>
+      <%= f.text_area :remark, class:"counts-text", id:"count-info" %>
+    </div>
+    <%# カテゴリーの設定 %>
+    <div class="count-detail">
+      <div class="weight-bold-text">
+        カテゴリー
+        <span class="indispenable">必須</span>
+      </div>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"count-category"})%>
+    </div>
+    <%# 公開・非公開の設定 %>
+    <div class="count-detail">
+      <div class="weight-bold-text">
+        公開・非公開
+        <span class="indispenable">必須</span>
+      </div>
+      <%= f.collection_select(:release_id, Release.all, :id, :name, {}, {class:"select-box", id:"count-release"})%>
+    </div>
+  </div>
+
+  <%# 動的フォームの作成 %>
+  <div class="detail_form">
+    <%= f.fields_for :details do |detail| %>
+      <div class="detail-form">
+        <div class="detail-bold-text">
+          タイトル
+        </div>
+        <%= detail.text_field :title, class:"detail-title" %>
+      </div>
+
+      <div class="detail-form">
+        <div class="detail-bold-text">
+          回数
+        </div>
+        <%= detail.text_field :number, class:"detail-number" %>
+        <%= button_tag "up",type:'button',class:"count-up-btn" %>
+        <%= button_tag "down",type:'button',class:"count-down-btn" %>
+      </div>
+
+      <div class="detail-form">
+        <div class="detail-bold-text">
+          確率
+        </div>
+        <%= detail.text_field :probability, class:"detail-probability" %>
+        <%= button_tag "calc.",type:'button',class:"count-calc-btn" %>
+      </div>
+      <%= f.link_to_remove "削除" %>
+    <% end %>
+    <%= f.link_to_add "追加", :details %>
+  </div>
+
+  <%# 試行回数 %>
+  <div class="trial-form">
+    <div class="trial-bold-text">
+        試行回数
+    </div>
+    <div class = "trial-input">
+      <%= f.text_field :trials, class:"trial-number", id:"trials" %>
+      <%= button_tag "up",type:'button',class:"count-btn",id:"trial-up-btn" %>
+      <%= button_tag "down",type:'button',class:"count-btn",id:"trial-down-btn" %>
+    </div>
+  </div>
+
+  <%# 送信ボタン %>
+  <div class="count-btn-contents">
+    <%= f.submit "投稿" ,class:"submit-btn" %>
+    <%= link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+  <% end %>
+</div>
+
