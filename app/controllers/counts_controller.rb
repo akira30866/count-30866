@@ -36,6 +36,9 @@ class CountsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def count_params
     params.require(:count).permit(:image, :name, :remark, :category_id, :release_id, :trials,details_attributes: [:id, :count_id, :title, :number, :probability, :_destroy]).merge(user_id: current_user.id)
