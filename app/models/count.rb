@@ -11,7 +11,7 @@ class Count < ApplicationRecord
     validates :release_id
   end
   # Association
-  has_many :details
+  has_many :details, dependent: :destroy
   accepts_nested_attributes_for :details, allow_destroy: true
   belongs_to :user 
   has_one_attached :image

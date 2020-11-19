@@ -9,7 +9,7 @@
   <% if user_signed_in? && @count.user.id == current_user.id  %>
     <%= link_to '編集', edit_count_path(@count.id), method: :get, class: "item-red-btn" %>
     <p class='or-text'>or</p>
-    <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+    <%= link_to '削除', count_path(@count.id), method: :delete, class:'item-destroy' %>
   <% end %>
 
   <div class="item-explain-box">
