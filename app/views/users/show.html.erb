@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの投稿"%>
+      </h2>
+      <div class="user__card">
+        <%# 投稿者本人がユーザーマイページへ移動した場合 %>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <%= render partial: 'user_show', collection: @counts, as: :count %>
+        <% else %>
+        <%# 本人以外がユーザーマイページに移動した場合は非公開が見えないようにする%>
+          <%= render partial: 'user_show_count', collection: @counts, as: :count %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
