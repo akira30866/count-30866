@@ -142,7 +142,7 @@
   width: 50px;
 }
 
-.count-btn{
+.count-btn, .count-up-btn, .count-down-btn, .count-calc-btn, .set-btn{
   height: 30px;
   margin-left: 20px;
 }
