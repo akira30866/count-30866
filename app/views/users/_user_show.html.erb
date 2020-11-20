@@ -1,10 +1,7 @@
-<% if count.release_id == 2 %>
-  <div class="card">
+<div class="card">
     <%= link_to image_tag(count.image, class: :card__img ), count_path(count.id) %>
     <div class="card__body">
       <%= link_to count.name, count_path(count.id), class: :card__title%>
       <%= link_to "by#{count.user.nickname}", user_path(count.user.id), class: :card__user %>
     </div>
-  </div>
-<% else %>
-<% end %>
+</div>
