@@ -25,13 +25,13 @@
         <th class="detail-item">カテゴリー</th>
         <td class="detail-value"><%= @count.category.name %></td>
       </tr>
-      <% if @details %>
-          <%= render partial: 'count-show', collection: @details, as: :detail %>
-      <% end %>
       <tr>
         <th class="detail-item">試行回数</th>
         <td class="detail-value"><%= @count.trials %></td>
       </tr>
+      <% if @details %>
+          <%= render partial: 'count-show', collection: @details, as: :detail %>
+      <% end %>
     </tbody>
   </table>
 </div>
